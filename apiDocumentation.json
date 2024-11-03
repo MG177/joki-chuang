@@ -1,0 +1,132 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "Ecommerce API",
+  "collectionId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+  "dateExported": "2024-11-03T05:30:00.000Z",
+  "version": "1.2",
+  "folders": [],
+  "requests": [
+      {
+          "_id": "e5c1d9d7-5d34-4e8a-a5f6-8d7c7a5b902f",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Register User",
+          "url": "http://localhost:5000/users/register",
+          "method": "POST",
+          "sortNum": 10000,
+          "created": "2024-11-03T05:30:00.000Z",
+          "modified": "2024-11-03T05:30:00.000Z",
+          "headers": [
+              {
+                  "name": "Content-Type",
+                  "value": "application/json"
+              }
+          ],
+          "body": {
+              "type": "json",
+              "raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}"
+          }
+      },
+      {
+          "_id": "ec21a5b2-7d92-486b-bd4e-c8e897a8ab03",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Login User",
+          "url": "http://localhost:5000/users/login",
+          "method": "POST",
+          "sortNum": 20000,
+          "created": "2024-11-03T05:31:00.000Z",
+          "modified": "2024-11-03T05:31:00.000Z",
+          "headers": [
+              {
+                  "name": "Content-Type",
+                  "value": "application/json"
+              }
+          ],
+          "body": {
+              "type": "json",
+              "raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}"
+          }
+      },
+      {
+          "_id": "f92e9b94-6b4e-4b6b-8f2d-02c88c87c121",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Get All Products",
+          "url": "http://localhost:5000/products",
+          "method": "GET",
+          "sortNum": 30000,
+          "created": "2024-11-03T05:32:00.000Z",
+          "modified": "2024-11-03T05:32:00.000Z",
+          "headers": []
+      },
+      {
+          "_id": "c6d3e1a1-8bd8-4518-8c0c-645217c1b42b",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Create Product (Admin)",
+          "url": "http://localhost:5000/products",
+          "method": "POST",
+          "sortNum": 40000,
+          "created": "2024-11-03T05:33:00.000Z",
+          "modified": "2024-11-03T05:33:00.000Z",
+          "headers": [
+              {
+                  "name": "Content-Type",
+                  "value": "application/json"
+              },
+              {
+                  "name": "Authorization",
+                  "value": "Bearer {{token}}"
+              }
+          ],
+          "body": {
+              "type": "json",
+              "raw": "{\n    \"name\": \"Frozen Cod\",\n    \"price\": 12.99,\n    \"description\": \"Premium frozen cod fillets\",\n    \"stock\": 20\n}"
+          }
+      },
+      {
+          "_id": "8a0b74d6-5d74-4c8f-a32f-eaeb80ae48e5",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Create Order",
+          "url": "http://localhost:5000/orders",
+          "method": "POST",
+          "sortNum": 50000,
+          "created": "2024-11-03T05:34:00.000Z",
+          "modified": "2024-11-03T05:34:00.000Z",
+          "headers": [
+              {
+                  "name": "Content-Type",
+                  "value": "application/json"
+              },
+              {
+                  "name": "Authorization",
+                  "value": "Bearer {{token}}"
+              }
+          ],
+          "body": {
+              "type": "json",
+              "raw": "{\n    \"userId\": \"{{userId}}\",\n    \"products\": [\n        {\n            \"productId\": \"product_id_placeholder\",\n            \"quantity\": 2\n        }\n    ],\n    \"total\": 31.98\n}"
+          }
+      },
+      {
+          "_id": "6e7b0d72-9d48-41d1-b85b-8f2fa5e9a032",
+          "colId": "e5f82cd2-d5e7-4b67-bf82-c83603f7a3f4",
+          "containerId": "",
+          "name": "Get All Orders (Admin)",
+          "url": "http://localhost:5000/orders",
+          "method": "GET",
+          "sortNum": 60000,
+          "created": "2024-11-03T05:35:00.000Z",
+          "modified": "2024-11-03T05:35:00.000Z",
+          "headers": [
+              {
+                  "name": "Authorization",
+                  "value": "Bearer {{token}}"
+              }
+          ]
+      }
+  ],
+  "ref": "sampleRefString"
+}
