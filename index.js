@@ -18,4 +18,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to the E-commerce API');
 });
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
 module.exports = app;
