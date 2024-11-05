@@ -9,6 +9,9 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
+
 // Routes
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
