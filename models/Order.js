@@ -9,6 +9,7 @@ const orderSchema = new mongoose.Schema({
     },
   ],
   status: { type: String, default: 'pending' }, // Other statuses could be 'shipped', 'completed', etc.
+  address: { type: String, required: true },
   total: { type: Number, required: true },
 });
 
