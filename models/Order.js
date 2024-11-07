@@ -6,8 +6,12 @@ const orderSchema = new mongoose.Schema({
     {
       productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
       quantity: { type: Number, required: true },
+      price: { type: Number, required: true },
     },
   ],
+  metodePengiriman: { type: String, required: true },
+  metodePembayaran: { type: String, required: true },
+  ongkir: { type: Number, required: true },
   status: { type: String, default: 'pending' }, // Other statuses could be 'shipped', 'completed', etc.
   address: { type: String, required: true },
   total: { type: Number, required: true },
