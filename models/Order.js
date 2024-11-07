@@ -11,6 +11,8 @@ const orderSchema = new mongoose.Schema({
   ],
   metodePengiriman: { type: String, required: true },
   metodePembayaran: { type: String, required: true },
+  phoneNumber: { type: String, required: true },
+  norek: { type: String, required: true },
   ongkir: { type: Number, required: true },
   status: { type: String, default: 'pending' }, // Other statuses could be 'shipped', 'completed', etc.
   address: { type: String, required: true },
