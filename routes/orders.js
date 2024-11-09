@@ -1,5 +1,5 @@
 const express = require('express');
-const { createOrder, getOrderById, getAllOrders, getDetailedOrders, updateOrder, deleteOrder,getDetailedOrder } = require('../controllers/orderController');
+const { createOrder, getOrderById, getAllOrders, getDetailedOrders, updateOrder, deleteOrder, getDetailedOrder, getOrderByUserId } = require('../controllers/orderController');
 const router = express.Router();
 
 router.get('/detailed', getDetailedOrders); // Admin view detailed order
@@ -7,6 +7,7 @@ router.get('/:id/detailed', getDetailedOrder); // Admin view detailed order
 router.post('/', createOrder); // User creates an order
 router.get('/:id', getOrderById); // Get specific order by ID
 router.get('/', getAllOrders); // Admin view all orders
+router.get('/user/:userId', getOrderByUserId); // Get orders by user ID
 
 
 router.put('/:id', updateOrder); // Admin update order

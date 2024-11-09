@@ -42,3 +42,8 @@ exports.getDetailedOrder = async (req, res) => {
     .populate('userId');
   res.json(orders);
 };
+
+exports.getOrderByUserId = async (req, res) => {
+  const orders = await Order.find({ userId: req.params.userId });
+  res.json(orders);
+};
