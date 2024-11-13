@@ -91,9 +91,22 @@ exports.loginUser = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find()
+    const { search } = req.query;
+    let query = {};
+
+    if (search) {
+      query = {
+        $or: [
+          { username: { $regex: search, $options: 'i' } },
+          { email: { $regex: search, $options: 'i' } }
+        ]
+      };
+    }
+
+    const users = await User.find(query)
       .select('-password')
       .sort({ createdAt: -1 });
+      
     res.json(users);
   } catch (error) {
     res.status(500).json({ 
@@ -102,6 +115,7 @@ exports.getAllUsers = async (req, res) => {
     });
   }
 };
+
 
 exports.getUser = async (req, res) => {
   try {

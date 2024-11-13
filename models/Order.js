@@ -16,6 +16,7 @@ const orderSchema = new mongoose.Schema({
   address: { type: String},
   ongkir: { type: Number, required: true },
   total: { type: Number, required: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Order', orderSchema);

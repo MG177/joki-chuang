@@ -38,3 +38,8 @@ exports.deleteProduct = async (req, res) => {
   await Product.findByIdAndDelete(req.params.id);
   res.json({ message: 'Product deleted' });
 };
+
+exports.getTotalProducts = async (req, res) => {
+  const totalProducts = await Product.countDocuments();
+  res.json({ totalProducts });
+};
