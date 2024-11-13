@@ -1,8 +1,21 @@
 const Order = require('../models/Order');
+const Product = require('../models/Product');
 
 // Create new order
 exports.createOrder = async (req, res) => {
   const newOrder = new Order(req.body);
+  //kurangi stok produk
+  const products = req.body.products;
+  for (const product of products) {
+    const productId = product.productId;
+    const quantity = product.quantity;
+    const productToUpdate =
+    await Product.findById(productId);
+    productToUpdate.stock -= quantity;
+    console.log(productToUpdate);
+    
+    await productToUpdate.save();
+  }
   await newOrder.save();
   res.json(newOrder);
 };
