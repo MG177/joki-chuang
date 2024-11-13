@@ -13,7 +13,7 @@ const orderSchema = new mongoose.Schema({
   phoneNumber: { type: String },
   norek: { type: String },
   status: { type: String, default: 'pending' }, // Other statuses could be 'shipped', 'completed', etc.
-  address: { type: String, required: true },
+  address: { type: String},
   ongkir: { type: Number, required: true },
   total: { type: Number, required: true },
 });
